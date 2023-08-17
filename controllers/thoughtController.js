@@ -15,6 +15,7 @@ module.exports = {
             const getAThought = await Thought.findOne({ _id: req.params.thoughtId }).select('-__v');
             if (!getAThought) {
                 res.status(400).json({ message: 'no thought with that id' })
+                return
             }
             res.status(200).json(getAThought)
         } catch (err) {
@@ -24,11 +25,8 @@ module.exports = {
     },
     async createThought(req, res) {
         try {
-            const thoughtText = req.body.thoughtText;
-            const username = req.body.username;
-            const userId = req.userId
-            if (!thoughtText || !username || !userId) {
-                res.status(400).json({ message: 'no thoughtText/ username/ userId' })
+            if (!req.body) {
+                res.status(400).json({ message: 'incorrect thoughtText/ username/ userId' })
                 return
             }
             const createAThought = await Thought.create(req.body);

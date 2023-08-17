@@ -33,16 +33,7 @@ connection.once('open', async () => {
         });
     }
     await Thought.collection.insertMany(thoughtList)
-    // const insertedUsers = await User.collection.insertMany(users);
-    // for (let i = 0; i < users.length; i++) {
-    //     const friendIds = users[i].friends.map(friendUsername => {
-    //         const friend = insertedUsers.ops.find(user => user.username === friendUsername);
-    //         return friend._id
-    //     })
-    //     await User.collection.updateOne(
-    //         { _id: insertedUsers.ops[i]._id }, { $set: { friends: friendIds } }
-    //     )
-    // }
+    await User.collection.insertMany(users);
 
     console.log(thoughtList);
     console.log(users);
