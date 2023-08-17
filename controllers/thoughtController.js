@@ -28,8 +28,8 @@ module.exports = {
             const username = req.body.username;
             const userId = req.userId
             if (!thoughtText || !username || !userId) {
-                return res.status(400).json({ message: 'no thoughtText/ username/ userId' })
-
+                res.status(400).json({ message: 'no thoughtText/ username/ userId' })
+                return
             }
             const createAThought = await Thought.create(req.body);
             res.status(200).json(createAThought)
