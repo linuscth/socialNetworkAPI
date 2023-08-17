@@ -17,7 +17,7 @@ This project is an API for a social network web application where users can shar
 ## Installation
 
 1. Clone this repository to your local machine.
-2. Make sure you have MongoDB installed. Follow the [MongoDB installation guide](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb) to set it up.
+2. Make sure you have MongoDB installed. 
 3. Install the project's dependencies by running the following command:
 
 ## Usage
