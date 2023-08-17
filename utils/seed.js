@@ -21,7 +21,7 @@ connection.once('open', async () => {
         const username = userNum(i);
         const email = userEmail(username);
         const thoughts = multipleRandomThought(2, username)
-        const friends = randomFriends(3);
+        const friends = randomFriends(3, username);
         users.push({
             username,
             email,
@@ -33,7 +33,16 @@ connection.once('open', async () => {
         });
     }
     await Thought.collection.insertMany(thoughtList)
-    await User.collection.insertMany(users);
+    // const insertedUsers = await User.collection.insertMany(users);
+    // for (let i = 0; i < users.length; i++) {
+    //     const friendIds = users[i].friends.map(friendUsername => {
+    //         const friend = insertedUsers.ops.find(user => user.username === friendUsername);
+    //         return friend._id
+    //     })
+    //     await User.collection.updateOne(
+    //         { _id: insertedUsers.ops[i]._id }, { $set: { friends: friendIds } }
+    //     )
+    // }
 
     console.log(thoughtList);
     console.log(users);

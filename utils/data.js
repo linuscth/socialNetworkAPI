@@ -128,6 +128,15 @@ const randomFriends = (num) => {
     }
     return result;
 }
+// const randomFriends = (numFriends, usersArray) => {
+//     const friends = [];
+//     for (let i = 0; i < numFriends; i++) {
+//         // Generate a random friend index
+//         const randomIndex = Math.floor(Math.random() * usersArray.length);
+//         friends.push(usersArray[randomIndex].username);
+//     }
+//     return friends;
+// };
 
 
 module.exports = { userEmail, usernames, userNum, randomReaction, multipleRandomThought, randomFriends, randompickinArr }
