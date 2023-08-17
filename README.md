@@ -56,7 +56,7 @@ The API provides the following routes:
 
 ## Walkthrough Video
 
-A walkthrough video demonstrating the functionality of the API and how to test the routes using tools like Insomnia can be found at [INSERT_VIDEO_LINK_HERE].
+
 
 ## Technologies Used
 
